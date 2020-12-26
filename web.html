@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./stylesheet.css">
+  </head>
+  <body>
+    <div class="sidenav" id="nav">
+      <div class="vertical-center">
+	<a href="#intro">Introduction</a>
+	<a href="#eq1">v = u + at</a>
+      </div>
+    </div>
+
+    <a name="intro"></a>
+    <section>
+      <div class="main style1"> 
+	<h1 class="heading">Equations of Motion</h1>
+	<p>1-dimensional motion can be understood in the terms of 3 equations of motion. These equations relate the initial velocity (u), final velocity (v), acceleration (a), time (t), and height/distance (d) travelled with respect to a particular object.</p>
+      </div>
+    </section>
+
+    <a name="eq1"></a>
+    <section>
+      <div class="main style1">
+	<h2>Equation 1: v = u + at</h2>
+	
+	<table style="width:100%">
+	  <tr>
+	    <td>Initial Velocity (m/s):</td>
+	    <td>Final Velocity (m/s):</td>
+	    <td>Time (s):</td>
+	    <td>Acceleration (m/s<sup>2</sup>):</td>
+	  </tr>
+	  <tr>
+	    <td><input type="number" id="v_0"></td>
+	    <td><input type="number" id="v_f"></td>
+	    <td><input type="number" id="t"></td>
+	    <td><input type="number" id="a"></td>
+	  </tr>
+	</table>
+	
+	<input type="submit" onclick="compute_vuat()" value="Compute">
+	<p id="demo"></p>
+      </div>
+    </section>
+
+    <a name="eq2"></a>
+    <section>
+    <div class="main style1">
+      <h2>Equation 2: d = ut +
+	<div class="frac">
+	  <span>1</span>
+	  <span class="symbol">/</span>
+	  <span class="bottom">2</span></div>
+	at<sup>2</sup></h2>
+      
+      <table style="width:100%">
+	<tr>
+	  <td>Initial Velocity (m/s):</td>
+	  <td>Distance/Height (m):</td>
+	  <td>Time (s):</td>
+	  <td>Acceleration (m/s<sup>2</sup>):</td>
+	</tr>
+	<tr>
+	  <td><input type="number" id="2_v_0"></td>
+	  <td><input type="number" id="2_s"></td>
+	  <td><input type="number" id="2_t"></td>
+	  <td><input type="number" id="2_a"></td>
+	</tr>
+      </table>
+      
+      <input type="submit" onclick="compute_usat()" value="Compute">
+      <p id="demo2"></p>
+    </div>
+    </section>
+    
+    <script src="main.js"></script>
+
+  </body>
+</html> 

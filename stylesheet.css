@@ -1,0 +1,203 @@
+body {
+    font-family: "Sans serif", optima;
+    background-color: #edf6f9;
+    background: linear-gradient(to bottom, #cee0dc, #b9cfd4, #afaab9, #b48291)
+		/*pattern:1 #f6f1d3, #648880, #293f50*/
+}
+
+
+.sidenav {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    text-align: right;
+    background-color: rgba(109, 104, 117, 0.3);
+    /*background-image: radial-gradient(ellipse, rgba(165, 36, 61, 0.6), transparent 120%);*/
+    overflow-x: hidden;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a {
+  padding: 20px 12px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  text-align: right;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:after {
+    content: "";	
+    display: block;
+    height: 2px;
+    width: 100%;
+    right: 0;
+    border-radius: 5px;
+    background-color: rgba(109, 104, 117, 1);
+}
+
+
+/* On mouse-over */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav a:hover:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    right: 0;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #cee0dc, #b9cfd4, #afaab9, #b48291);
+}
+
+
+/* Centered section inside the top navigation */
+.topnav-centered a {
+  float: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+
+/* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+  }
+
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
+.vertical-center {
+    right: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+section {
+    display: block;
+    height:100%;
+    width:100%;
+    padding: 20px;
+    padding-right: 40px;
+    padding-left: 300px;
+    box-sizing:border-box;
+    text-align: left;
+}
+
+.main {
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15%;
+    padding-left: 10%;
+    font-size: 18px;
+    text-align: left;
+}
+
+.main.style1 {
+/*    background-color: rgba(255, 0, 0, 0.2);*/
+    background-image: radial-gradient(ellipse, white, transparent 100%);
+    color: black;
+}
+
+.main.style2 {
+    background-color: #e29578;
+    color: black;
+}
+
+.main.style3 {
+    background-color: #ffddd2;
+    color: black;
+}
+
+p {
+    text-align: justify;
+}
+
+/*html, body {
+    margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;
+}*/
+
+
+h1 {
+    font-size: 36px;
+    font-family: "Sans serif", optima;
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type=number], select {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+}
+
+input[type=submit] {
+  width: 100%;
+  background-image: linear-gradient(to bottom, #cee0dc, #b9cfd4);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Sans serif", optima;
+  color: black;
+}
+
+input[type=submit]:hover {
+    background-image: linear-gradient(to bottom, #afaab9, #b48291);
+}
+
+
+/* for fractions */
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+.frac > span {
+    display: block;
+    padding: 0.1em;
+}
+.frac span.bottom {
+    border-top: thin solid black;
+}
+.frac span.symbol {
+    display: none;
+} 
