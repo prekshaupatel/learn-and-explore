@@ -3,20 +3,25 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./stylesheet.css">
+    <script src="main.js"></script>
   </head>
   <body>
     <div class="sidenav" id="nav">
       <div class="vertical-center">
-	<a href="#intro">Introduction</a>
-	<a href="#eq1">v = u + at</a>
+	<a href="#1-D Motion">1-D Motion</a>
+<!--	<a href="#eq1">v = u + at</a>
+	<a href="#eq2">d = ut + <span>&#189;</span> at<sup>2</sup></a>
+	<a href="#eq3">v<sup>2</sup> - u<sup>2</sup> = 2ad</a> -->
+	<a href="#calculator">Calculator</a>
+	<a href="#notes">Notes</a>
       </div>
     </div>
 
-    <a name="intro"></a>
+    <a name="1-D Motion"></a>
     <section>
       <div class="main style1"> 
-	<h1 class="heading">Equations of Motion</h1>
-	<p>1-dimensional motion can be understood in the terms of 3 equations of motion. These equations relate the initial velocity (u), final velocity (v), acceleration (a), time (t), and height/distance (d) travelled with respect to a particular object.</p>
+	<h1 class="heading">Equations of 1-D Motion</h1>
+	<p>1-dimensional motion can be understood in the terms of a few equations of motion. These equations relate the initial velocity (u), final velocity (v), acceleration (a), time (t), and displacement (d) travelled with respect to a particular object.</p>
       </div>
     </section>
 
@@ -25,7 +30,7 @@
       <div class="main style1">
 	<h2>Equation 1: v = u + at</h2>
 	
-	<table style="width:100%">
+<!--	<table style="width:100%">
 	  <tr>
 	    <td>Initial Velocity (m/s):</td>
 	    <td>Final Velocity (m/s):</td>
@@ -40,25 +45,45 @@
 	  </tr>
 	</table>
 	
-	<input type="submit" onclick="compute_vuat()" value="Compute">
-	<p id="demo"></p>
+	<input type="submit" onclick="compute_eq1()" value="Compute">
+	<p id="demo"></p> 
       </div>
     </section>
 
     <a name="eq2"></a>
     <section>
-    <div class="main style1">
-      <h2>Equation 2: d = ut +
+      <div class="main style1"> -->
+	<h2>Equation 2: v<sup>2</sup> - u<sup>2</sup> = 2ad</h2>
+      
+<!--      <table style="width:100%">
+	<tr>
+	  <td>Initial Velocity (m/s):</td>
+	  <td>Final Velocity (m/s):</td>
+	  <td>Displacement (m):</td>
+	  <td>Acceleration (m/s<sup>2</sup>):</td>
+	</tr>
+	<tr>
+	  <td><input type="number" id="3_v_0"></td>
+	  <td><input type="number" id="3_v_f"></td>
+	  <td><input type="number" id="3_s"></td>
+	  <td><input type="number" id="3_a"></td>
+	</tr>
+      </table>
+      
+      <input type="submit" onclick="compute_eq3()" value="Compute">
+      <p id="demo3"></p>-->
+
+      <h2>Equation 3: d = ut +
 	<div class="frac">
 	  <span>1</span>
 	  <span class="symbol">/</span>
 	  <span class="bottom">2</span></div>
 	at<sup>2</sup></h2>
       
-      <table style="width:100%">
+<!--      <table style="width:100%">
 	<tr>
 	  <td>Initial Velocity (m/s):</td>
-	  <td>Distance/Height (m):</td>
+	  <td>Displacement (m):</td>
 	  <td>Time (s):</td>
 	  <td>Acceleration (m/s<sup>2</sup>):</td>
 	</tr>
@@ -70,12 +95,91 @@
 	</tr>
       </table>
       
-      <input type="submit" onclick="compute_usat()" value="Compute">
-      <p id="demo2"></p>
+      <input type="submit" onclick="compute_eq2()" value="Compute">
+      <p id="demo2"></p> 
     </div>
     </section>
-    
-    <script src="main.js"></script>
 
+
+    <a name="eq3"></a>
+    <section>
+    <div class="main style1"> -->
+      <h2>Equation 4: d = vt -
+	<div class="frac">
+	  <span>1</span>
+	  <span class="symbol">/</span>
+	  <span class="bottom">2</span></div>
+	at<sup>2</sup></h2>
+      
+    </div>
+    </section>
+
+
+    <a name="calculator"></a>
+    <section>
+      <div class="main style1">
+	<h2>Calculator</h2>
+	
+	<table style="width:100%">
+	  <tr>
+	    <td>Initial Velocity (u):</td>
+	    <td><input type="number" id="c_v_0"> m/s</td>
+	  </tr>
+	  <tr>
+	    <td>Final Velocity (v):</td>
+	    <td><input type="number" id="c_v_f"> m/s</td>
+	  </tr>
+	  <tr>
+	    <td>Displacement (d):</td>
+	    <td><input type="number" id="c_s"> m</td>
+	  </tr>
+          <tr>
+	    <td>Acceleration (a):</td>
+	    <td><input type="number" id="c_a"> m/s<sup>2</sup></td>
+          </tr>
+          <tr>
+	    <td>Time (t):</td>
+            <td><input type="number" id="c_t"> s</td>
+	  </tr>
+	</table>
+	
+	<input type="submit" onclick="compute_calc()" value="Compute">
+	<p id="solc"></p>
+	<p id="democ"></p>
+	<p id="solc2"></p>
+	<p id="democ2"></p>
+	<p id="solc3"></p>
+	<p id="democ3"></p>
+	<p id="solc4"></p>
+	<p id="democ4"></p>
+	<p id="solc5"></p>
+	<p id="democ5"></p>
+      
+      </div>
+    </section>
+    <a name="notes"></a>
+    <section>
+      <div class="main style1">
+	<h2>Notes</h2>
+	<p>To solve for variables in 1-dimensional motion, make sure that the signs for initial velocity (u), final velocity (v), acceleration (a), and displacement (d) are correct.</p>
+	<p>For example, let us think of a problem set along the y-axis (up is positive, down is negative).</p>
+	<ul>
+	  <li>Velocity</li>
+	  <ul>
+	    <li>If you initially throw a ball upwards, the initial velocity will be positive.</li>
+	    <li>If you throw a ball downwards, the initial velocity will be negative.</li>
+	  </ul>
+	  <li>Acceleration</li>
+	  <ul>
+	    <li>Since gravity pulls everything downwards, the acceleration due to gravity is negative.</li>
+	  </ul>
+	  <li>Displacement</li>
+	  <ul>
+	    <li>If an object ends up higher than where it initially was, the displacement is positive.</li>
+	    <li>If an object ends up lower than where it initially was, the displacement is negative.</li>
+	  </ul>
+	</ul>
+      </div>
+    </section>
   </body>
 </html> 
