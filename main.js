@@ -17,89 +17,6 @@ for (i = 0; i < dropdown.length; i++) {
 }
 
 
-function compute_eq1() {
-    var u = parseFloat(document.getElementById("v_0").value);
-    var v = parseFloat(document.getElementById("v_f").value);
-    var a = parseFloat(document.getElementById("a").value);
-    var t = parseFloat(document.getElementById("t").value);
-    if (!Number.isNaN(u) && !Number.isNaN(v) && !Number.isNaN(a) && Number.isNaN(t)) { // time
-        var t_ = (v-u)/a;
-        document.getElementById("demo").innerHTML = "Time taken is " + t_.toPrecision(4) + " s.";
-    }
-    else if (!Number.isNaN(u) && !Number.isNaN(v) && Number.isNaN(a) && !Number.isNaN(t)) { //acceleration
-        var a_ = (v-u)/t;
-        document.getElementById("demo").innerHTML = "Acceleration is " + a_.toPrecision(4) + " m/s"+"2".sup() + ".";
-    }
-    else if (!Number.isNaN(u) && Number.isNaN(v) && !Number.isNaN(a) && !Number.isNaN(t)) { //final velocity
-        var v_ = u + a*t;
-        document.getElementById("demo").innerHTML = "Final Velocity is " + v_.toPrecision(4) + " m/s.";
-    }
-    else if (Number.isNaN(u) && !Number.isNaN(v) && !Number.isNaN(a) && !Number.isNaN(t)) { //initial velocity
-        var u_ = v - a*t;
-        document.getElementById("demo").innerHTML = "Initial Velocity is " + u_.toPrecision(4) + " m/s.";
-    }
-    else {
-        document.getElementById("demo").innerHTML = "Error: Please enter any 3 values to compute the 4th.";
-    }
-}
-
-function compute_eq2() {
-    var u = parseFloat(document.getElementById("2_v_0").value);
-    var s = parseFloat(document.getElementById("2_s").value);
-    var a = parseFloat(document.getElementById("2_a").value);
-    var t = parseFloat(document.getElementById("2_t").value);
-    if (!Number.isNaN(u) && !Number.isNaN(s) && !Number.isNaN(a) && Number.isNaN(t)) { // time
-        var roots = compute_roots(a/2, u, -s);
-	if (roots.length == 1) {
-	    document.getElementById("demo2").innerHTML = "Time taken is " + roots[0] + " s.";
-	}
-	else {
-	    document.getElementById("demo2").innerHTML = "Time taken is " + roots[0] + " s or " + roots[1] + " s.";
-	}
-    }
-    else if (!Number.isNaN(u) && !Number.isNaN(s) && Number.isNaN(a) && !Number.isNaN(t)) { //acceleration
-        var a_ = 2*(s - u*t)/(t*t);
-        document.getElementById("demo2").innerHTML = "Acceleration is " + a_.toPrecision(4) + " m/s"+"2".sup()+ ".";
-    }
-    else if (!Number.isNaN(u) && Number.isNaN(s) && !Number.isNaN(a) && !Number.isNaN(t)) { //distance
-        var s_ = u*t + a*t*t/2;
-        document.getElementById("demo2").innerHTML = "Displacement is " + s_.toPrecision(4) + " m.";
-    }
-    else if (Number.isNaN(u) && !Number.isNaN(s) && !Number.isNaN(a) && !Number.isNaN(t)) { //initial velocity
-        var u_ = (s - a*t*t/2)/t;
-        document.getElementById("demo2").innerHTML = "Initial Velocity is " + u_.toPrecision(4) + " m/s.";
-    }
-    else {
-        document.getElementById("demo2").innerHTML = "Error: Please enter any 3 values to compute the 4th.";
-    }
-}
-
-function compute_eq3() {
-    var u = parseFloat(document.getElementById("3_v_0").value);
-    var v = parseFloat(document.getElementById("3_v_f").value);
-    var s = parseFloat(document.getElementById("3_s").value);
-    var a = parseFloat(document.getElementById("3_a").value);
-    if (!Number.isNaN(u) && !Number.isNaN(s) && !Number.isNaN(a) && Number.isNaN(v)) { // final velocity
-        var v_ = Math.sqrt(2*a*s + u*u);
-        document.getElementById("demo3").innerHTML = "Final Velocity is " + v_.toPrecision(4) + " m/s.";
-    }
-    else if (!Number.isNaN(u) && !Number.isNaN(s) && Number.isNaN(a) && !Number.isNaN(v)) { //acceleration
-        var a_ = (v*v - u*u)/(2*s);
-        document.getElementById("demo3").innerHTML = "Acceleration is " + a_.toPrecision(4) + " m/s"+"2".sup()+ ".";
-    }
-    else if (!Number.isNaN(u) && Number.isNaN(s) && !Number.isNaN(a) && !Number.isNaN(v)) { //distance
-        var s_ = (v*v - u*u)/(2*a);
-        document.getElementById("demo3").innerHTML = "Displacement is " + s_.toPrecision(4) + " m.";
-    }
-    else if (Number.isNaN(u) && !Number.isNaN(s) && !Number.isNaN(a) && !Number.isNaN(t)) { //initial velocity
-        var u_ = Math.sqrt(v*v - 2*a*s);
-        document.getElementById("demo3").innerHTML = "Initial Velocity is " + u_.toPrecision(4) + " m/s.";
-    }
-    else {
-        document.getElementById("demo3").innerHTML = "Error: Please enter any 3 values to compute the 4th.";
-    }
-}
-
 function compute_calc() {
     var u = parseFloat(document.getElementById("c_v_0").value);
     var v = parseFloat(document.getElementById("c_v_f").value);
@@ -439,29 +356,6 @@ function check_consistent(u, v, d, a, t) {
     return true;
 }
 
-
-
-function compute_roots(a, b, c) {
-    let discriminant = b * b - 4 * a * c;
-    
-    // condition for real and different roots
-    if (discriminant > 0) {
-	root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-	root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-	return [root1.toPrecision(4), root2.toPrecision(4)]
-    }
-    // condition for real and equal roots
-    else if (discriminant == 0) {
-	root1 = root2 = -b / (2 * a);
-
-	return [root1.toPrecision(4)]
-    }
-    else {
-	let realPart = (-b / (2 * a)).toFixed(2);
-	let imagPart = Math.abs((Math.sqrt(-discriminant) / (2 * a)).toFixed(2));
-	return [`(${realPart} + ${imagPart}i)`, `(${realPart} - ${imagPart}i)`]
-    }
-}
 
 function approx_unequal(x, y) {
     var ratio = x/y;
