@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./stylesheet.css">
+  </head>
+  <body>
+    <div class="sidenav" id="nav">
+      <name><a>@prekshaupatel</a></name>
+      <home><a href="./index.html">Home</a></home>
+      <div class="vertical-center">
+	<links><a href="#2-D Motion">2-D Motion</a></links>
+	<links><a href="#x-axis">Motion along x-axis</a></links>
+	<links><a href="#y-axis">Motion along y-axis</a></links>
+	<links><a href="#x,y-axis">x-axis and y-axis</a></links>
+	<links><a href="#calculator">Calculator</a></links>
+      </div>
+    </div>
+
+
+    <a name="2-D Motion"></a>
+    <section>
+      <div class="main style1">
+	<h1 class="heading">Equations of 2-D Motion</h1>
+	<p>To understand motion in 2 dimension, we can analyze the motion along the x-axis and motion along the y-axis.</p>
+      </div>
+    </section>
+
+
+    <a name="x-axis"></a>
+    <section>
+      <div class="main style1">
+        <h1 class="heading">Motion along the x-axis</h1>
+	<p>The motion along the x-axis is assumed to be non-accelerated.</p>
+	<ul>
+	  <li><b>v<sub>x</sub></b> is the velocity along the x-axis</li>
+	  <li><b>d<sub>x</sub></b> is the displacement along the x-axis</li>
+	  <li><b>t</b> is time travelled</li>
+	</ul>
+	<div>From our understanding of non-accelerated motion, we know the relation between <b>v<sub>x</sub></b>, <b>d<sub>x</sub></b>, and <b>t</b> can be expressed as: <b>v<sub>x</sub> = <div class="frac"><span>d<sub>x</sub></span><span class="symbol">/</span><span class="bottom">t</span></div></b></div>
+	<p>Note: <b>u<sub>x</sub></b> = <b>v<sub>x</sub></b>, since the acceleration is 0, i.e, velocity remains constant in the absence of acceleration.</p>
+      </div>
+    </section>
+
+
+    
+    <a name="y-axis"></a>
+    <section>
+      <div class="main style1">
+        <h1 class="heading">Motion along the y-axis</h1>
+	<p>The motion along the y-axis is accelerated.</p>
+	<ul>
+	  <li><b>u<sub>y</sub></b> is the initial velocity along the y-axis</li>
+	  <li><b>v<sub>y</sub></b> is the final velocity along the y-axis</li>
+          <li><b>d<sub>y</sub></b> is the displacement along the y-axis</li>
+	  <li><b>a</b> is the acceleration along the y-axis</li>
+          <li><b>t</b> is time travelled</li>
+	</ul>
+	<div>From our understanding of accelerated <a href="./1d_motion.html">1-dimensional motion</a>, we know the relation between <b>u<sub>y</sub></b>, <b>v<sub>y</sub></b>, <b>d<sub>y</sub></b>, <b>a</b>, and <b>t</b>. The relationship can be expressed as the following set of equations:</div>
+	<dl>
+	  <dt><div><b>v<sub>y</sub> = u<sub>y</sub> + at</b></div></dt>
+	  <dt><div><b>v<sub>y</sub><sup>2</sup> - u<sub>y</sub><sup>2</sup> = 2ad<sub>y</sub></b></div></dt>
+	  <dt><div><b>d<sub>y</sub> = u<sub>y</sub>t + <div class="frac"><span>1</span><span class="symbol">/</span><span class="bottom">2</span></div>at<sup>2</sup></b></div></dt>
+	</dl>	  
+      </div>
+    </section>
+
+    
+    <a name="x,y-axis"></a>
+    <section>
+      <div class="main style1">
+        <h1 class="heading">Combining the motion along both axis</h1>
+	<p>The first variable that combines the motion along the x-axis and the y-axis is time (<b>t</b>).</p>
+	<p>Additionally, given the initial velocity (<b>u</b>) and the initial angle (<b>&theta;</b>), we can split it into its components to obtain <b>u<sub>x</sub></b> and <b>u<sub>y</sub></b>.</p>
+	<dl>
+	  <dt><div><b>u<sub>x</sub> = v<sub>x</sub> = u cos &theta;</b></div></dt>
+	  <dt><div><b>u<sub>y</sub> = u	sin &theta;</b></div></dt>
+	</dl>
+<!--	<p>Similarly, given the final velocity (<b>v</b>) and the final angle (<b>&theta;<sub>t</sub></b>), we can split it into its components to obtain <b>v<sub>x</sub></b> and <b>v<sub>y</sub></b>.</p>
+	<dl>
+	  <dt><div><b>v<sub>x</sub> = v cos &theta;<sub>t</sub></b></div></dt>
+	  <dt><div><b>v<sub>y</sub> = v	sin &theta;<sub>t</sub></b></div></dt>
+	</dl> -->
+      </div>
+    </section>
+	
+
+    <a name="calculator"></a>
+    <section>
+      <div class="main style1">
+	<h2>Calculator</h2>
+
+	<p><b>Both x-axis and y-axis</b></p>
+	<table style="width:100%">
+	  <tr>
+	    <td>Initial Velocity (<b>u</b>):</td>
+	    <td><input type="number" id="u"> m/s</td>
+	  </tr>
+	  <tr>
+            <td>Initial Velocity Angle (<b>&theta;</b>):</td>
+            <td><input type="number" id="theta"> &#176;</td>
+          </tr>
+	  <tr>
+	    <td>Time (<b>t</b>):</td>
+	    <td><input type="number" id="time"> s</td>
+	  </tr>
+	</table>
+	
+	<p><b>x-axis</b></p>
+	<table style="width:100%">
+	  <tr>
+	    <td>Velocity along x-axis (<b>v<sub>x</sub></b>):</td>
+	    <td><input type="number" id="u_x"> m/s</td>
+	  </tr>
+	  <tr>
+	    <td>Displacement along x-axis (<b>d<sub>x</sub></b>):</td>
+	    <td><input type="number" id="d_x"> m</td>
+	  </tr>
+	</table>
+	
+	<p><b>y-axis</b></p>
+	<table style="width:100%">
+	  <tr>
+	    <td>Initial Velocity along y-axis (<b>u<sub>y</sub></b>):</td>
+	    <td><input type="number" id="u_y"> m/s</td>
+	  </tr>
+	  <tr>
+	    <td>Final Velocity along y-axis (<b>v<sub>y</sub></b>):</td>
+	    <td><input type="number" id="v_y"> m/s</td>
+	  </tr>
+          <tr>
+	    <td>Acceleration (<b>a</b>):</td>
+	    <td><input type="number" id="a"> m/s<sup>2</sup></td>
+          </tr>
+          <tr>
+	    <td>Displacement along y-axis (<b>d<sub>y</sub></b>):</td>
+            <td><input type="number" id="d_y"> m</td>
+	  </tr>
+	</table>
+
+
+	<input type="submit" onclick="compute_calc_2d_motion()" value="Compute">
+	
+	<p id="ans1"></p>
+	<p id="sol1"></p>
+	<p id="ans2"></p>
+	<p id="sol2"></p>
+	<p id="ans3"></p>
+	<p id="sol3"></p>
+	<p id="ans4"></p>
+	<p id="sol4"></p>
+	<p id="ans5"></p>
+	<p id="sol5"></p>
+	
+      </div>
+    </section>
+    
+    
+    <script src="motion_2.js"></script>    
+  </body>
+</html> 
