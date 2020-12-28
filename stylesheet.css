@@ -1,12 +1,14 @@
 body {
     font-family: "Sans serif", optima;
-    background-color: #edf6f9;
-    background: linear-gradient(to bottom, #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background: linear-gradient(to bottom, #e29578, #ffddd2, #edf6f9, #83c5be, #006d77) fixed;
 				/*#542344, #bfd1e5, #ebf5ee, #607466, #3a606e);*/
 /*#a7a5c6, #8797b2, #6d8a96, #5d707f, #66ced6);*/
 				/*pattern:3 #f2e9e4, #c9ada7, #9a8c98, #4a4e69, #22223b*/
 				/*patern:2 #cee0dc, #b9cfd4, #afaab9, #b48291*/
-		/*pattern:1 #f6f1d3, #648880, #293f50*/
+    /*pattern:1 #f6f1d3, #648880, #293f50*/
 }
 
 
@@ -224,7 +226,6 @@ input[type=submit]:hover {
 	width: 100%;
     }
 }
-
 
 
 .h-link {
