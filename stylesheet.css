@@ -21,10 +21,15 @@ body {
 
 /* Style the sidenav links and the dropdown button */
 .sidenav a {
+    text-decoration: none;
+    font-family: "Sans serif", optima;
+    color: white;
+}
+
+.sidenav links {
   padding: 20px 12px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: white;
   display: block;
   border: none;
   background: none;
@@ -41,10 +46,9 @@ body {
     cursor: pointer;
     background-color: rgba(109, 104, 117, 0.6);
     font-size: 14px;
-    color: white;
 }
 
-.sidenav Home {
+.sidenav home {
     position: absolute;
     padding: 1px 5px 1px 5px;
     display: block;
@@ -53,10 +57,9 @@ body {
     cursor: pointer;
     background-color: rgba(109, 104, 117, 0.6);
     font-size: 20px;
-    color: white;
 }
 
-.sidenav a:after {
+.sidenav links:after {
     content: "";	
     display: block;
     height: 2px;
@@ -68,49 +71,14 @@ body {
 
 
 /* On mouse-over */
-.sidenav a:hover {
+.sidenav links:hover {
   color: #f1f1f1;
 }
 
-.sidenav a:hover:after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 100%;
-    right: 0;
-    border-radius: 5px;
+.sidenav links:hover:after {
     background-image: linear-gradient(to right, #cee0dc, #b9cfd4, #afaab9, #b48291);
 }
 
-
-/* Centered section inside the top navigation */
-.topnav-centered a {
-  float: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Right-aligned section inside the top navigation */
-.topnav-right {
-  float: right;
-}
-
-/* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
-@media screen and (max-width: 600px) {
-  .topnav a, .topnav-right {
-    float: none;
-    display: block;
-  }
-
-  .topnav-centered a {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
-}
 
 .vertical-center {
     right: 2%;
@@ -219,6 +187,7 @@ input[type=submit]:hover {
   float: left;
   width: 33.33%;
   padding: 10px;
+  
 }
 
 /* Clear floats after the columns */
@@ -242,13 +211,31 @@ input[type=submit]:hover {
     }
 }
 
-box-desc {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    heught: 90%;
-    position: absolute;
+
+
+.h-link {
+    text-decoration: none;
+    font-family: "Sans serif", optima;
+    font-size: 24px;
+    color: black;
     display: block;
-    background-color: rgba(109, 104, 117, 0.6);
-    font-size: 20px;
-    color: white;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;  
+}
+
+.h-link:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    right: 0;
+    border-radius: 5px;
+    background-color: rgba(109, 104, 117, 1);
+}
+
+.h-link:hover:after {
+    background-image: linear-gradient(to right, #cee0dc, #b9cfd4, #afaab9, #b48291);
 }
