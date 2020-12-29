@@ -1,9 +1,18 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
     font-family: "Sans serif", optima;
     height: 100%;
     width: 100%;
     padding-top: 30px;
     background-repeat: no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e29578), color-stop(#ffddd2), color-stop(#edf6f9), color-stop(#83c5be), to(#006d77)) fixed;
+    background: -o-linear-gradient(top, #e29578, #ffddd2, #edf6f9, #83c5be, #006d77) fixed;
     background: linear-gradient(to bottom, #e29578, #ffddd2, #edf6f9, #83c5be, #006d77) fixed;
     /*pattern:5 #542344, #bfd1e5, #ebf5ee, #607466, #3a606e*/
     /*pattern:4 #a7a5c6, #8797b2, #6d8a96, #5d707f, #66ced6*/
@@ -108,6 +117,8 @@ body {
 }
 
 .sidenav links:hover:after {
+    background-image: -webkit-gradient(linear, left top, right top, from(#e29578), color-stop(#ffddd2), color-stop(#edf6f9), color-stop(#83c5be), to(#006d77));
+    background-image: -o-linear-gradient(left, #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
     background-image: linear-gradient(to right, #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
 }
 
@@ -119,7 +130,8 @@ body {
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
 
 section {
@@ -129,7 +141,8 @@ section {
     padding: 20px;
     padding-right: 5%;
     padding-left: 20%;
-    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
     text-align: left;
 }
 
@@ -162,6 +175,7 @@ section a:hover {
 }
 
 .main.style1 {
+    background-image: -o-radial-gradient(ellipse, white, transparent 100%);
     background-image: radial-gradient(ellipse, white, transparent 100%);
     color: black;
 }
@@ -185,7 +199,8 @@ input[type=number], select {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   
 }
 
@@ -229,7 +244,8 @@ input[type=submit]:hover {
 
 
 * {
-    box-sizing: border-box;    
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;    
 }
 
 /* Create four equal columns that floats next to each other */
@@ -286,5 +302,7 @@ input[type=submit]:hover {
 }
 
 .h-link:hover:after {
+    background-image: -webkit-gradient(linear,  left top, right top,  from(#e29578), color-stop(#ffddd2), color-stop(#edf6f9), color-stop(#83c5be), to(#006d77));
+    background-image: -o-linear-gradient(left,  #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
     background-image: linear-gradient(to right,  #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
 }
