@@ -2,12 +2,13 @@ body {
     font-family: "Sans serif", optima;
     height: 100%;
     width: 100%;
+    padding-top: 30px;
     background-repeat: no-repeat;
     background: linear-gradient(to bottom, #e29578, #ffddd2, #edf6f9, #83c5be, #006d77) fixed;
-				/*#542344, #bfd1e5, #ebf5ee, #607466, #3a606e);*/
-/*#a7a5c6, #8797b2, #6d8a96, #5d707f, #66ced6);*/
-				/*pattern:3 #f2e9e4, #c9ada7, #9a8c98, #4a4e69, #22223b*/
-				/*patern:2 #cee0dc, #b9cfd4, #afaab9, #b48291*/
+    /*pattern:5 #542344, #bfd1e5, #ebf5ee, #607466, #3a606e*/
+    /*pattern:4 #a7a5c6, #8797b2, #6d8a96, #5d707f, #66ced6*/
+    /*pattern:3 #f2e9e4, #c9ada7, #9a8c98, #4a4e69, #22223b*/
+    /*pattern:2 #cee0dc, #b9cfd4, #afaab9, #b48291*/
     /*pattern:1 #f6f1d3, #648880, #293f50*/
 }
 
@@ -18,12 +19,39 @@ body {
     height: 100%;
     width: 17%;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     text-align: right;
     background-color: rgba(109, 104, 117, 0.3);
-    /*background-image: radial-gradient(ellipse, rgba(165, 36, 61, 0.6), transparent 120%);*/
     overflow-x: hidden;
 }
+
+.name {
+    position: fixed;
+    display: block;
+    padding: 5px;
+    padding-right: 15px;
+    left: 0px;
+    width: 17%;
+    bottom: 0;
+    text-align: right;
+/*    cursor: pointer;*/
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 900px) {
+    .sidenav  {
+        visibility: none;
+	display: none;
+    }
+    .name {
+	position: relative;
+	width: 100%;
+	padding-right: 5%;
+    }
+}
+
 
 /* Style the sidenav links and the dropdown button */
 .sidenav a {
@@ -44,26 +72,24 @@ body {
   outline: none;
 }
 
-.sidenav name {
-    position: absolute;
-    display: block;
-    bottom: 1%;
-    right: 5%;
-    cursor: pointer;
-    background-color: rgba(109, 104, 117, 0.6);
-    font-size: 14px;
-}
 
-.sidenav home {
-    position: absolute;
-    padding: 1px 5px 1px 5px;
+.home {
+    text-decoration: none;
+    position: fixed;
+    padding: 4px 4px 0px 4px;
     display: block;
-    top: 1%;
-    left: 8%;
+    top: 5px;
+    left: 5px;
     cursor: pointer;
+    color: white;
     background-color: rgba(109, 104, 117, 0.6);
     font-size: 20px;
+    z-index: 1000;
+    border-radius: 3px;
 }
+
+
+
 
 .sidenav links:after {
     content: "";	
@@ -107,6 +133,13 @@ section {
     text-align: left;
 }
 
+@media screen and (max-width: 900px) {
+    section {
+	padding-left: 5%;
+	padding-right: 5%;
+    }
+}
+
 section a {
 /*    text-decoration: none;*/
     font-family: "Sans serif", optima;
@@ -116,6 +149,7 @@ section a {
 section a:hover {
     color: #83c5be;
 }
+
 
 .main {
     border-radius: 5px;
