@@ -306,3 +306,7 @@ input[type=submit]:hover {
     background-image: -o-linear-gradient(left,  #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
     background-image: linear-gradient(to right,  #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
 }
+
+#mm_eq {
+   background-color: white;
+}

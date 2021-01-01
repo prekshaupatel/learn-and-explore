@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7LCKRFVVR4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-7LCKRFVVR4');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  
+
+  <body>
+
+    <a class="home" href="./index.html"><i class="material-icons">home</i></a>
+    
+    <div class="sidenav" id="nav">
+      <div class="vertical-center">
+	<links><a href="intro">Enzyme Kinetics</a></links>
+<!--	<links><a href="#calculator">Calculator</a></links>
+	<links><a href="#notes">Notes</a></links>-->
+      </div>
+    </div>
+
+
+    
+    <a name="intro"></a>
+    <section>
+      <div class="main style1"> 
+	<h1 class="heading">Enzyme Kinetics</h1>
+	<p>Enzymes are biological catalysts that alter the rate of reactions. The study of the effect of enzymes on the rate of these reactions is termed as enzyme kinetics.</p>
+      </div>
+    </section>
+
+    <a name="work?"></a>
+    <section>
+      <div class="main style1">
+	<h2>How do enzymes work?</h2>
+	
+	<p>Enzymes speed up a reaction by lowering the activation energy (E<sub>a</sub>) for a reaction. Since a lower activation energy reduces the energy barrier, it helps speed up the reaction.</p>
+	<p><b>Note:</b> Enzymes have no effect on &Delta;G (Gibbs Free Energy of the Reaction), i.e., the net energy released or gained during the reaction is unchanged.</p>
+      
+    </div>
+    </section>
+
+
+
+    <a name="reaction_rate"></a>
+    <section>
+      <div class="main style1">
+	<h2>Michaelis–Menten Kinetics</h2>
+	<p>The Michaelis–Menten equation can be used to predict the rate of product formation in enzyme-catalyzed reactions. The proposed mathematical model was as follows:</p>
+	<table style="width:100%">
+	  <tr>
+	    <th rowspan="3">E+S</th>
+	    <th 
+	  </tr>
+	</table>
+	<div></div>
+	
+    </div>
+    </section>
+
+    <a name="work?"></a>
+    <section>
+      <div class="main style1">
+	<h2>Graph</h2>
+	<table style="width:100%">
+          <tr>
+            <td>K<sub>m</sub>:</td>
+            <td><input type="number" id="k_m"> mM</td>
+          </tr>
+          <tr>
+            <td>V<sub>max</sub>:</td>
+            <td><input type="number" id="v_max"> µM/min</td>
+          </tr>
+        </table>
+
+	<table style="width:100%">
+	  <tr>
+	    <td><input type="submit" onclick="mm_graph()" value="Compute"></td>
+	    <td><input type="submit" onclick="clear_all()" value="Clear"></td>
+	  </tr>
+	</table>
+	<div id="mm_eq"></div>
+<!--	<canvas id="mm_eq" width="400" height="400"></canvas>-->
+
+    </div>
+    </section>
+
+<!--
+    <a name="calculator"></a>
+    <section>
+      <div class="main style1">
+	<h2>Calculator</h2>
+	
+	<table style="width:100%">
+	  <tr>
+	    <td>Initial Velocity (u):</td>
+	    <td><input type="number" id="c_v_0"> m/s</td>
+	  </tr>
+	  <tr>
+	    <td>Final Velocity (v):</td>
+	    <td><input type="number" id="c_v_f"> m/s</td>
+	  </tr>
+	  <tr>
+	    <td>Displacement (d):</td>
+	    <td><input type="number" id="c_s"> m</td>
+	  </tr>
+          <tr>
+	    <td>Acceleration (a):</td>
+	    <td><input type="number" id="c_a"> m/s<sup>2</sup></td>
+          </tr>
+          <tr>
+	    <td>Time (t):</td>
+            <td><input type="number" id="c_t"> s</td>
+	  </tr>
+	</table>
+	
+	<input type="submit" onclick="compute_calc_1d_motion()" value="Compute">
+	<p id="solc"></p>
+	<p id="democ"></p>
+	<p id="solc2"></p>
+	<p id="democ2"></p>
+	<p id="solc3"></p>
+	<p id="democ3"></p>
+	<p id="solc4"></p>
+	<p id="democ4"></p>
+	<p id="solc5"></p>
+	<p id="democ5"></p>
+      
+      </div>
+    </section>
+    
+
+    -->
+    
+    <div class="name"><a>@prekshaupatel</a></div>
+    
+
+  </body>
+  <script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>-->
+  <script src="enzyme_kinetics.js"></script>
+</html> 
