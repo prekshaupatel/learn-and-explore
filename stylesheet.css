@@ -307,6 +307,34 @@ input[type=submit]:hover {
     background-image: linear-gradient(to right,  #e29578, #ffddd2, #edf6f9, #83c5be, #006d77);
 }
 
-#mm_eq {
-   background-color: white;
+.tooltip {
+	position: relative;
+  	display: inline-block;
+   	padding: 4px 8px 2px 8px;
+   	cursor: pointer;
+    color: white;
+    background-color: rgba(109, 104, 117, 0.6);
+    font-size: 14px;
+    z-index: 100;
+    border-radius: 3px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+	width: 200px;
+  background-color: rgba(129, 124, 137, 1);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

@@ -1,9 +1,14 @@
 var v_max = 1;
 var k_m = 1;
-var series = [];
+var series_mm = [];
+var series_lb = [];
+
 var y_arr = [];
 var x_arr;
-var x_max;
+
+var x_max_mm;
+var x_min_lb;
+var x_max_lb;
 
 var num_dataset = 0;
 
@@ -20,36 +25,93 @@ function range(start, stop, num) {
 }
 
 function clear_all() {
-    series = [];
+    series_lb = [];
+    series_mm = [];
     num_dataset = 0;
     document.getElementById("mm_eq").innerHTML = "";
+    document.getElementById("lb_p").innerHTML = "";
+    document.getElementById("msg").innerHTML = "";
+    document.getElementById("v_max").value = NaN;
+    document.getElementById("k_m").value = NaN;
 }
 
 function mm_graph() {
     v_max = parseFloat(document.getElementById("v_max").value);
     k_m = parseFloat(document.getElementById("k_m").value);
+    document.getElementById("msg").innerHTML = "";
     if (isNaN(v_max)) {
-	document.getElementById("v_max").innerHTML = 1;
+	document.getElementById("v_max").value = 1;
 	v_max = 1;
     }
     if (isNaN(k_m)) {
-	document.getElementById("k_m").innerHTML = 1;
+	document.getElementById("k_m").value = 1;
 	k_m = 1;
     }
     num_dataset += 1;
     if (num_dataset == 1) {
-	x_max = 10 * k_m;
+	x_max_mm = 10 * k_m;
+	x_min_lb = -2 / k_m;
+	x_max_lb = 4 / k_m;
     }
-    data_gen();
-    renderChart();
+    data_gen_mm();
+    renderChart_mm();
+    if (v_max == 0) {
+	document.getElementById("msg").innerHTML = "<b>Note:</b> Lineweaver-Burk Plot cannot be drawn for V<sub>max</sub> = 0.<br>";
+    }
+    else {
+	data_gen_lb();
+	renderChart_lb();
+    }
 }
 
-function data_gen() {
-    let name_ = 'V<sub>max</sub>: ' + v_max.toPrecision(2) + "; K<sub>m</sub>: " + k_m.toPrecision(2);
-    x_arr = range(0.0, x_max, 500.0);
+
+/*
+ * LB
+ */
+function y_lb(x) {
+    var y = (k_m / v_max) * x + (1 / v_max);
+    y_arr.push([x,y]);
+}
+
+function data_gen_lb() {
+    let name_ = 'V<sub>max</sub>: ' + v_max.toPrecision(2) + "; K<sub>M</sub>: " + k_m.toPrecision(2);
+    x_arr = range(x_min_lb, x_max_lb, 500.0);
+    y_arr = [];
+    x_arr.forEach(y_lb);
+    series_lb.push({name: name_, points: y_arr});
+}
+
+function renderChart_lb() {
+    JSC.Chart('lb_p', {
+        title_label_text: 'Lineweaver-Burk Plot',
+/*        annotations: [{
+            label_text: 'Source: National Center for Health Statistics',
+            position: 'bottom left'
+        }],*/
+        legend_visible: true,
+	legend: {
+	    position: 'right',
+	    template: '%icon %name'
+	},
+        xAxis_crosshair_enabled: true,
+        defaultPoint_tooltip: '%icon <b>%yValue</b>',
+        series: series_lb,
+	xAxis: { label_text: '1/[S] (mM)<sup>-1</sup>' },
+	yAxis: { label_text: '1/V<sub>0</sub> (μM/min)<sup>-1</sup>' },
+	defaultPoint_marker_visible: false
+    });
+}
+
+
+/*
+ * MM
+ */
+function data_gen_mm() {
+    let name_ = 'V<sub>max</sub>: ' + v_max.toPrecision(2) + "; K<sub>M</sub>: " + k_m.toPrecision(2);
+    x_arr = range(0.0, x_max_mm, 500.0);
     y_arr = [];
     x_arr.forEach(y_mm);
-    series.push({name: name_, points: y_arr});
+    series_mm.push({name: name_, points: y_arr});
 }
 
 function y_mm(x) {
@@ -63,7 +125,7 @@ function x_mm(y) {
     return x;
 }
 
-function renderChart() {
+function renderChart_mm() {
     JSC.Chart('mm_eq', {
         title_label_text: 'Michaelis–Menten Kinetics',
 /*        annotations: [{
@@ -77,53 +139,10 @@ function renderChart() {
 	},
         xAxis_crosshair_enabled: true,
         defaultPoint_tooltip: '%icon <b>%yValue</b>',
-        series: series,
+        series: series_mm,
 	xAxis: { label_text: '[S] (mM)' },
 	yAxis: { label_text: 'V<sub>0</sub> (μM/min)' },
 	defaultPoint_marker_visible: false
     });
 }
 
-/*
-function csvToSeries() {
-    let name_ = 'V<sub>max</sub>: ' + v_max.toPrecision(2) + "; K<sub>m</sub>: " + k_m.toPrecision(2);
-    x_arr = range(0.0, 10.0*k_m, 20000.0);
-    y = [];
-    x_arr.forEach(y_mm);
-    series.push({label: name_, data: y_arr, lineWidth: 20, pointRadius: 0, fill: false, backgroundColor: 'rgba(185, 214, 200, 0.75)',fillColor : "rgba(73,188,170,0.4)",
-                        strokeColor : "rgba(72,174,209,0.4)"});
-}
-
-function y_mm(x) {
-    var y = (v_max * x) / (k_m + x);
-    y_arr.push(y);
-
-}
-
-
-function renderChart() {
-    new Chart(document.getElementById("mm_eq"), {
-	type: 'line',
-	color: 'blue',
-	borderWidth: 10,
-	multiTooltipTemplate: "<%%=datasetLabel%> : <%%= value %>",
-	data: {
-	    labels: x_arr,
-	    datasets: series
-	},
-	options: {
-	    hover: {
-		mode: 'index',
-		intersect: false
-	    },
-	    pointRadius: 0,
-	    title: {
-		display: true,
-		text: 'Michaelis–Menten Kinetics'
-	    }
-	    
-	}
-    });
-}
-
-*/
