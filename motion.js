@@ -16,6 +16,26 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
+function clear_all() {
+    document.getElementById("c_v_0").value = NaN;
+    document.getElementById("c_v_f").value = NaN;
+    document.getElementById("c_s").value = NaN;
+    document.getElementById("c_a").value = NaN;
+    document.getElementById("c_t").value = NaN;
+
+    document.getElementById("democ").innerHTML = "";
+    document.getElementById("democ2").innerHTML = "";
+    document.getElementById("democ3").innerHTML = "";
+    document.getElementById("democ4").innerHTML = "";
+    document.getElementById("democ5").innerHTML = "";
+
+    document.getElementById("solc").innerHTML = "";
+    document.getElementById("solc2").innerHTML = "";
+    document.getElementById("solc3").innerHTML = "";
+    document.getElementById("solc4").innerHTML = "";
+    document.getElementById("solc5").innerHTML = "";
+}
+
 
 function compute_calc_1d_motion() {
     var u = parseFloat(document.getElementById("c_v_0").value);

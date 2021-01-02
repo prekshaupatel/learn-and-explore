@@ -10,6 +10,31 @@ var formula = [];
 
 var in_x, in_y, in_u;
 
+function clear_all() {
+    document.getElementById("u").value = NaN;
+    document.getElementById("theta").value = NaN;
+    document.getElementById("time").value = NaN;
+    document.getElementById("u_x").value = NaN;
+    document.getElementById("d_x").value = NaN;
+    document.getElementById("u_y").value = NaN;
+    document.getElementById("v_y").value = NaN;
+    document.getElementById("a").value = NaN;
+    document.getElementById("d_y").value = NaN;
+
+    document.getElementById("ans1").innerHTML = "";
+    document.getElementById("ans2").innerHTML = "";
+    document.getElementById("ans3").innerHTML = "";
+    document.getElementById("ans4").innerHTML = "";
+    document.getElementById("ans5").innerHTML = "";
+
+    document.getElementById("sol1").innerHTML = "";
+    document.getElementById("sol2").innerHTML = "";
+    document.getElementById("sol3").innerHTML = "";
+    document.getElementById("sol4").innerHTML = "";
+    document.getElementById("sol5").innerHTML = "";
+}
+
+
 function compute_xy_u() {
     var cnt = 0;
     var u_ = NaN, x_ = NaN, y_ = NaN, theta_ = NaN;
