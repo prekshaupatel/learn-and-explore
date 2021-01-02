@@ -17,11 +17,11 @@ for (i = 0; i < dropdown.length; i++) {
 }
 
 function clear_all() {
-    document.getElementById("c_v_0").value = NaN;
-    document.getElementById("c_v_f").value = NaN;
-    document.getElementById("c_s").value = NaN;
-    document.getElementById("c_a").value = NaN;
-    document.getElementById("c_t").value = NaN;
+    document.getElementById("c_v_0").value = "";
+    document.getElementById("c_v_f").value = "";
+    document.getElementById("c_s").value = "";
+    document.getElementById("c_a").value = "";
+    document.getElementById("c_t").value = "";
 
     document.getElementById("democ").innerHTML = "";
     document.getElementById("democ2").innerHTML = "";

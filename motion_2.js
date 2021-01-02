@@ -11,15 +11,15 @@ var formula = [];
 var in_x, in_y, in_u;
 
 function clear_all() {
-    document.getElementById("u").value = NaN;
-    document.getElementById("theta").value = NaN;
-    document.getElementById("time").value = NaN;
-    document.getElementById("u_x").value = NaN;
-    document.getElementById("d_x").value = NaN;
-    document.getElementById("u_y").value = NaN;
-    document.getElementById("v_y").value = NaN;
-    document.getElementById("a").value = NaN;
-    document.getElementById("d_y").value = NaN;
+    document.getElementById("u").value = "";
+    document.getElementById("theta").value = "";
+    document.getElementById("time").value = "";
+    document.getElementById("u_x").value = "";
+    document.getElementById("d_x").value = "";
+    document.getElementById("u_y").value = "";
+    document.getElementById("v_y").value = "";
+    document.getElementById("a").value = "";
+    document.getElementById("d_y").value = "";
 
     document.getElementById("ans1").innerHTML = "";
     document.getElementById("ans2").innerHTML = "";

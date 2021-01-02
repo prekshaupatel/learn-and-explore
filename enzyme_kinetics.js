@@ -31,8 +31,8 @@ function clear_all() {
     document.getElementById("mm_eq").innerHTML = "";
     document.getElementById("lb_p").innerHTML = "";
     document.getElementById("msg").innerHTML = "";
-    document.getElementById("v_max").value = NaN;
-    document.getElementById("k_m").value = NaN;
+    document.getElementById("v_max").value = "";
+    document.getElementById("k_m").value = "";
 }
 
 function mm_graph() {
