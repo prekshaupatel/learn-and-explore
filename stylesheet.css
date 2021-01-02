@@ -222,6 +222,34 @@ input[type=submit]:hover {
 }
 
 
+
+/*
+ * HTML code
+ *
+   <button class="hide_button" id="b_1" type="submit" onclick="hide_steps('step_1', 'b_1')">Show Steps</button>
+   <div id="step_1" style="display:none">
+   	Steps....
+   </div>
+ *
+ */
+.hide_button {
+    width: 150px;
+    background-color: rgba(109, 104, 117, 0.2);
+    padding: 1%;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Sans serif", optima;
+    color: black;
+}
+
+.hide_button:hover {
+    background-color: rgba(131, 197, 190, 0.8);
+}
+
+
 /* for fractions */
 .frac {
     display: inline-block;
