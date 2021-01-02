@@ -80,7 +80,16 @@
 	    <th><i>k<sub>r</sub></i></th>
 	    <th></th>
 	  </tr>
-	</table>	
+	</table>
+
+	<p>We can derive the Michaelis–Menten equation from the model.</p>
+
+	<button class="hide_button" id="button_1" type="submit" onclick="hide_steps('steps_1', 'button_1', 'Derivation')">Show Derivation</button>
+	<div id="steps_1" style="display:none">
+	<h3>Derivation</h3>
+
+	<h4>Reaction Rates</h4>
+	
 	<p>From the model we can determine the reaction rates as follows:</p>
 
 	<div><div class="frac"><span><i>d</i>[S]</span><span class="symbol">/</span><span class="bottom"><i>dt</i></span></div> = -<i>k<sub>f</sub></i> [E][S] + <i>k<sub>r</sub></i> [ES]</div>
@@ -91,41 +100,36 @@
 	<p>Additionally, we know that the free enzyme concentration [E] is equal to the total enzyme concentration [E<sub><i>total</i></sub> minus the enzyme-substrate concentration [ES], i.e.,</p>
 	<div style="text-align:left;"> [E] = [E]<sub><i>total</i></sub> - [ES] <span style="float:right;"><b>(1)</b></span></div>
 
-	<h3>Steady-state [ES] Equilibrium</h3>
+	<h4>Steady-state [ES] Equilibrium</h4>
 
 	<p>As the reaction approaches steady state, ES concentration becomes constant, i.e., </p>
 	<div><div class="frac"><span><i>d</i>[ES]</span><span class="symbol">/</span><span class="bottom"><i>dt</i></span></div> = 0</div>
 
 	<div style="text-align:left;">Thus, <i>k<sub>f</sub></i> [E][S] = (<i>k<sub>r</sub> + k<sub>cat</sub></i>) [ES] <span style="float:right;"><b>(2)</b></span></div>
 	<p>By combining <b>Equation 1</b> and <b>2</b>, we get the following:</p>
-	
-	<div id="steps_1" style="display:none">
 
 	<p><i>k<sub>f</sub></i> ([E]<sub><i>total</i></sub> - [ES])[S] = (<i>k<sub>r</sub> + k<sub>cat</sub></i>) [ES]</p>
 	<p><i>k<sub>f</sub></i> [E]<sub><i>total</i></sub>[S] - <i>k<sub>f</sub></i> [ES][S] = (<i>k<sub>r</sub> + k<sub>cat</sub></i>) [ES]</p>
 	<p><i>k<sub>f</sub></i> [E]<sub><i>total</i></sub>[S] = <i>k<sub>f</sub></i> [ES][S] + (<i>k<sub>r</sub> + k<sub>cat</sub></i>) [ES]</p>
 	<p><i>k<sub>f</sub></i> [E]<sub><i>total</i></sub>[S] = [ES] (<i>k<sub>f</sub></i> [S] + (<i>k<sub>r</sub> + k<sub>cat</sub></i>))</p>
 	<p><div class="frac"><span><i>k<sub>f</sub></i> [E]<sub><i>total</i></sub>[S]</span><span class="symbol">/</span><span class="bottom"><i>k<sub>f</sub></i> [S] + (<i>k<sub>r</sub> + k<sub>cat</sub></i>)</span></div> = [ES]</p>
-
-	</div>
-	<button class="hide_button" id="button_1" type="submit" onclick="hide_steps('steps_1', 'button_1')">Show Steps</button>
+	
 	<p><div class="frac"><span>[E]<sub><i>total</i></sub>[S]</span><span class="symbol">/</span><span class="bottom">[S] + (<div class="frac"><span><i>k<sub>r</sub> + k<sub>cat</sub></i></span><span class="symbol">/</span><span class="bottom"><i>k<sub>f</sub></i></span></div>)</span></div> = [ES]</p>
 
-
-
-
-	<h3>Reaction Velocity (V<sub>max</sub>)</h3>
+	
+	<h4>Reaction Velocity (V<sub>max</sub>)</h4>
 	
 	<p>The velocity of the reaction can be written as follows:</p>
 	<div>V<sub>0</sub> = <div class="frac"><span><i>d</i>[P]</span><span class="symbol">/</span><span class="bottom"><i>dt</i></span></div> = <i>k<sub>cat</sub></i> [ES] = <i>k<sub>cat</sub></i> <div class="frac"><span>[E]<sub><i>total</i></sub>[S]</span><span class="symbol">/</span><span class="bottom">[S] + (<div class="frac"><span><i>k<sub>r</sub> + k<sub>cat</sub></i></span><span class="symbol">/</span><span class="bottom"><i>k<sub>f</sub></i></span></div>)</span></div></div>
-	<p>We make two substitutions into the equation to simplify it.</p>
-	<ol>
+
+	<p>We make two substitutions into the equation to simplify it. As a result,</p>
+	</div>
+	<div><b>V<sub>0</sub> = <div class="frac"><span>V<sub>max</sub>[S]</span><span class="symbol">/</span><span class="bottom">[S] + K<sub>M</sub></span></div><span style="float:right;">(Michaelis–Menten equation)</span></b></div>
+	<p>Where </p>
+	<ul>
 	  <li>V<sub>max</sub> = <i>k<sub>cat</sub></i>[E]<sub><i>total</i></sub></li>
 	  <li>K<sub>M</sub> = <div class="frac"><span><i>k<sub>r</sub> + k<sub>cat</sub></i></span><span class="symbol">/</span><span class="bottom"><i>k<sub>f</sub></i></span></div></li>
-	</ol>
-	<p>Resultantly,</p>
-	<div><b>V<sub>0</sub> = <div class="frac"><span>V<sub>max</sub>[S]</span><span class="symbol">/</span><span class="bottom">[S] + K<sub>M</sub></span></div></b></div>
-		
+	</ul>	
 	
       </div>
     </section>
@@ -138,7 +142,7 @@
 	<h2>Lineweaver-Burk Plot</h2>
 	<h3>Equation</h3>
 	<p>To better visualize the data, we can take the reciprocal of both sides of the Michaelis–Menten equation.</p>
-	<button class="hide_button" id="button_2" type="submit" onclick="hide_steps('steps_2', 'button_2')">Show Steps</button>
+	<button class="hide_button" id="button_2" type="submit" onclick="hide_steps('steps_2', 'button_2', 'Steps')">Show Steps</button>
 	<div id="steps_2" style="display:none">
 
 	  <div><div class="frac"><span>1</span><span class="symbol">/</span><span class="bottom">V<sub>0</sub></span></div> = <div class="frac"><span>[S] + K<sub>M</sub></span><span class="symbol">/</span><span class="bottom">V<sub>max</sub>[S]</span></div></div>
